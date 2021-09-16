@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Array </title>
+
+        <script type="text/javaScript">
+            var arr = [30, "plz", true];
+            arr[5]="check";
+
+            document.write("<h3>Get Value from Array - 1</h3>");
+            document.write(arr[0], "<br>");
+            document.write(arr[1], "<br>");
+            document.write(arr[2], "<br>");
+            arr.pop();
+
+            document.write("<h3>Get Value from Array - 2</h3>");
+            for(var i=0; i<arr.length; i++){
+                document.write(arr[i],"<br>")
+            }
+
+            document.write("<h3>Get Value from Array - 3</h3>");
+            for(i in arr){
+                document.write(arr[i],"<br>")
+            }
+
+            var greenArr = ["교대", "방배", "강남"];
+            var yellowArr = ["미금", "정자", "수서"];
+
+            greenArr.splice(2,1, "서초", "역삼");
+            
+            console.log(greenArr);
+
+            var data1 = yellowArr.pop();
+            var data2 = yellowArr.shift();
+            console.log(yellowArr);
+
+            yellowArr.push(data2);
+            console.log(yellowArr);
+
+            yellowArr.unshift(data1);
+            console.log(yellowArr);
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+h2{
+    font-size: 20px;
+    color: orange !important;
+}
+p{
+    color: rgb(38, 107, 197);
+    text-align: center;
+    font-weight: bold;
+}
+.className{
+    font-size: 40px;
+    color: skyblue;
+}
+
+.red{
+    color: red;
+}
+
+#container{
+    width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px dotted green;
+}
+
+.colorTest{
+    text-align: left;
+    font-size: 40px;
+    width: 400px;
+    padding: 10px;
+    border: 3px solid #85C1E9;
+}
+
+#hungry{
+    color: cornflowerblue;
+    white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+}
+
+.what{
+    text-align: right;
+    color: #FFA726;
+}
