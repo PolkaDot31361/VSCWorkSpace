@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/bootstrap.css">
+    <style type="text/css">
+        body{
+            margin : 50px auto;
+            width: 600px;
+        }
+        .btn{
+            border-radius: 0.5rem;
+            width:40%;
+            
+        }
+        .large{
+            font-size: 4.5rem;
+        }
+        .container{
+            border-radius: 1rem;
+            border : solid black 2px;
+            box-shadow: 10px 5px 5px grey;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+        }
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+        td{
+            padding: 10px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: black;
+        }
+        .shadow{
+            border-radius: 0.75rem;
+            box-shadow: 5px 5px azure;
+        }
+        table{
+            display: block;
+            width: 100%;
+            border : 2px solid black;
+        }
+        form{
+            width : 100%;
+        }
+        .input-control{
+            width : 80%;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            transition-property: border-color, box-shadow;
+            transition-duration: 0.15s, 0.15s;
+            transition-timing-function: ease-in-out, ease-in-out;
+            transition-delay: 0s, 0s;
+        }
+    </style>
+    <script type="text/javascript" src="../resources/js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">BOOK KEEPER</a>
+        <div class="box">
+            <span class="large">Sign In</span>
+        </div>
+        <div class="box shadow">
+            <form>
+                <div class="box ">
+                    <input type="text" placeholder="ID" class="input-control">
+                </div>       
+                <div class="box ">
+                    <input type="password" placeholder="Password" class="input-control">
+                </div>       
+                <div class="box ">
+                    <input type="password" placeholder="Password Check" class="input-control">
+                </div>       
+                <div class="box ">
+                    <input type="text" placeholder="Nickname" class="input-control">
+                </div> 
+                <div class="box">
+                    <input type="submit" value="Sign In" class="btn btn-primary" >
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

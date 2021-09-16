@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="../resources/css/bootstrap.css">
+    <script type="text/javascript" src="../resources/js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        function signIn(){
+            location.href = "signIn.html";
+        }
+    </script>
     <style>
-        
        body{
             margin : 0 auto;
             width: 600px;
@@ -17,14 +22,17 @@
             width:40%;
             
         }
-        .box{
+        .container{
             display: flex;
             justify-content: center;
+            flex-direction: column;
+        }
+        .box{
             border-radius: 2rem;
             margin :50px;
             text-align: center;
             box-shadow: 10px 5px 5px grey;
-            height: max-content;
+            border: 2px solid black;
         }
         td{
             padding:10px;
@@ -54,7 +62,6 @@
                         </td>
                     </tr>
                     <tr>
-                        
                         <td>
                             <input type="password" placeholder="Password" class="input-size">
                         </td>
@@ -66,7 +73,7 @@
                     </tr>
                     <tr>
                         <td >
-                            <input type="button" value="Sign In" class="btn btn-primary">
+                            <input type="button" value="Sign In" class="btn btn-primary" onclick="signIn()">
                         </td>
                     </tr>
                     

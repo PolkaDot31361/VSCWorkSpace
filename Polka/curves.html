@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            margin : 0;
+            font-family: 'Inconsolata', monospace;
+            color: white;
+            background: #202731;
+            overflow-x: hidden;
+        }
+        section{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            padding: 100px 20vw;
+        }
+        .color1{
+            background:#012e67;
+        }
+        .color2{
+            background:#9cacbf;
+        }
+        .color3{
+            background:#2b6684;
+        }
+        .color4{
+            background:#032e42;
+        }
+        .curve{
+            position: absolute;
+            height:225px;
+            width: 100%;
+            bottom: 0;
+        }
+        .curve::before{
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 100%;
+            width: 50%;
+            height: 100%;
+            background-color: #9cacbf ;
+            transform: translate(126%,60%);
+
+        }
+        .curve::after{
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 100% 50%;
+            width:75%;
+            height: 100%;
+            background-color: #012e67;;
+            transform: translate(-15%, 59%);
+            z-index: 1;
+        }
+        .bubble::after{
+            content:'';
+            border-top-left-radius: 70% 100%;
+            border-top-right-radius: 45% 100%;
+            position:absolute;
+            bottom:0;
+            height: 30%;
+            width: 120%;
+            background-color: #2b6684;
+            z-index: 1;
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(141% + 1.3px);
+            height: 351px;
+        }
+
+        .wave .shape-fill {
+            fill: #032e42;
+        }
+        .spacer{
+            aspect-ratio: 960/540;
+            width:100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .layer1{
+            background-image: url("../resources/svg/layered-waves-haikei.svg");
+        }
+    </style>
+</head>
+<body>
+    <section class="color1">
+        <h1>Section 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quia est vel nulla obcaecati, modi molestias dicta, eaque ipsam corporis tenetur, ut illo quaerat. Hic pariatur corporis nostrum aut unde?</p>
+        <div class="curve"></div>
+    </section>
+    <section class="color2 bubble">
+        <h1>Section2</h1>
+        <p>Neque perferendis excepturi totam ratione omnis. Iste non vero minima doloremque animi doloribus perspiciatis officia distinctio? Inventore aliquid deserunt cumque! Nobis odit libero animi sit ipsa voluptatibus ipsum, impedit eum!</p>
+    </section>
+    <section class="color3">
+        <h1>Section3</h1>
+        <p>Eum, sequi quibusdam aspernatur, inventore saepe reprehenderit cum nobis voluptates, voluptatem veniam ipsam deleniti quisquam delectus beatae ea earum esse laboriosam molestias! Mollitia ex tenetur in dolores recusandae autem repudiandae.</p>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+    <section class="color4">
+        <h1>Section 4</h1>
+        <p>Modi dignissimos sint blanditiis neque, temporibus officiis iure dolorum? Vel voluptate cumque culpa corrupti. Commodi asperiores, rem distinctio sapiente blanditiis, molestias voluptas corrupti consectetur at quaerat iste quos aliquam aperiam.</p>
+    </section>
+    <section class="">
+        <h1>Section 5</h1>
+        <p>Similique, nesciunt consectetur consequuntur eos laudantium saepe atque tenetur soluta ducimus omnis nostrum harum error nemo dolores aliquid. Nihil at dolor maxime numquam omnis, soluta impedit illo eum id eaque?</p>
+    </section>
+    <div class="spacer layer1"></div>
+    <section class="color2">
+        <h1>Nice curves</h1>
+        <p>Debitis, quia dolor tempora fugit, et error harum totam blanditiis minima porro aspernatur, sit esse numquam ipsa voluptate quibusdam id nisi soluta molestias. Inventore ut, blanditiis pariatur veritatis molestiae esse.</p>
+    </section>
+    <section class="color3">
+        <h1>Nice curves</h1>
+        <p>Eaque laudantium, facere itaque temporibus dolorem eveniet atque qui deserunt aut quidem voluptatum dicta nihil laborum rem optio cupiditate, beatae aliquid dolorum saepe reiciendis voluptas tempora nostrum debitis! Officia, dignissimos?</p>
+    </section>
+    <section class="color4">
+        <h1>Nice curves</h1>
+        <p>Expedita consequatur quod aliquid soluta ea ab repellendus veritatis sit itaque ratione eius, neque quas libero? Dolor sit dolores assumenda, doloremque, tenetur impedit accusantium in culpa quas consequatur sapiente illum.</p>
+    </section>
+</body>
+</html>
