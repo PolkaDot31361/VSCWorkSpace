@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Boxicon-->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../resources/css/bootstrap.css">
+    <style type="text/css">
+    body{
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    table .btn{
+        font-size: 36px;
+    }
+    table td, table th{
+        text-align: center;
+        vertical-align: middle;
+    }
+    .right-align{
+        text-align: right;
+    }
+    </style>
+    <script type="text/javascript">
+        function check(){
+            alert("check success!")
+        }
+    </script>
+</head>
+<body>
+    <div class="records">
+
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    <i class='bx bx-list-plus btn' onclick="check();"></i>
+                </th>
+                <th>Num</th>
+                <th>Memo</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <i class='bx bx-minus btn' onclick="check();"></i>
+                </td>
+                <td>number integer</td>
+                <td class="right-align">Memo</td>
+                <td class="income">income</td>
+                <td class="right-align">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                <td>date</td>
+                <td>
+                    <i class='bx bxs-edit btn' onclick="check();"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class='bx bx-minus btn' onclick="check();"></i>
+                </td>
+                <td>number integer</td>
+                <td class="right-align">Memo</td>
+                <td class="spent">spent</td>
+                <td class="right-align">abdfer</td>
+                <td>date</td>
+                <td>
+                    <i class='bx bxs-edit btn' onclick="check();"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+	<br><br>
+    <div class="search">
+        <select id="searchType">
+            <option value="">...</option>
+            <option value="수입">Income</option>
+            <option value="지출">Expense</option>
+        </select>
+        <input type="text" placeholder="Search..." id="searchText">
+        <input type="button" value="Search" id="search">
+    </div>
+        <br><br>
+    <div class="analysis">
+
+        <input type="button" value="Total Income" id="income" class="btn btn-success">
+        <input type="button" value="Total Expense" id="spend" class="btn btn-danger">
+        <input type="number" placeholder="Total Income or Expense" id="total" readonly>
+        <br><br>
+        <input type="button" value="Minimum Amount" id="min" class="btn btn-default">
+        <input type="button" value="Maximum Amount" id="max" class="btn btn-default">
+        <input type="number" id="result" placeholder="Minimun or Maximum Amount" readonly>
+    </div>
+</body>
+</html>
