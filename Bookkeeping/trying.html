@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../resources/css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        body{
+        	margin: 50px auto;
+			display : flex;
+			flex-direction: column;
+			align-items: center;
+        }
+        .container{
+            border-radius: 1rem;
+            padding: 10px 15px;
+            width: 480px;
+            height : 600px;
+            background-image: linear-gradient(to right, #a2c5fc, #c0e8fc);
+        }
+        .container .logo a{
+	        text-decoration: none;
+	        font-size: 30px;
+	        color: black;
+	        font-weight: 600;
+            line-height: 30px;
+	    }
+        .logo .page_name{
+            font-size: 24px;
+            font-weight: 600;
+            color : white;
+        }
+        .box{
+        	height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content : space-around;
+            align-items: center;
+            margin: 15px;
+            padding: 5px;
+        }
+        .box .in-ctrl{
+        	background : #deeefd;
+        	border: none;
+        	border-radius: 1rem;
+        	padding: 5px 15px;
+        	font-weight: 600;
+        	color : #9b9898;
+        }
+        .box .in-ctrl:focus{
+        	outline: none;
+        }
+        .box .btn{
+            background-color: #6490e4;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 1px 3px 3px 0px hsla(0, 0%, 0%, 0.35);
+            padding:5px 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/account/join" method="post" onsubmit="return formCheck();">
+		<div class="container">
+			<div class="logo">
+		        <a href="/">
+                    BOOK<br>
+		         	KEEPER 
+		        </a>
+                <div class="page_name">Sign In</div>
+            </div>
+	        <div class="box">
+	            <input type="text" placeholder="ID" class="in-ctrl" name="acc_id" id="acc_id">
+	            <input type="password" placeholder="Password" class="in-ctrl" name="acc_pw" id="acc_pw">
+	            <input type="password" placeholder="Password Check" class="in-ctrl" id="pwCheck">
+	            <input type="text" placeholder="Nickname" class="in-ctrl" name="acc_nm" id="acc_nm">
+	            <input type="submit" value="Sign In" class="btn btn-primary" >
+	        </div>
+	    </div>
+   	</form>
+</body>
+</html>

@@ -14,73 +14,81 @@
     </script>
     <style>
        body{
-            margin : 0 auto;
+            margin : 50px auto;
             width: 600px;
         }
         .btn{
             border-radius: 0.5rem;
             width:40%;
-            
         }
         .container{
+            border-radius: 1rem;
+            padding: 10px 15px;
+            width: 480px;
+            height : 600px;
+            background-image: linear-gradient(to right, #a2c5fc, #c0e8fc);
             display: flex;
-            justify-content: center;
             flex-direction: column;
+            justify-content: space-around;
         }
-        .box{
-            border-radius: 2rem;
-            margin :50px;
+        .container .logo{
             text-align: center;
-            box-shadow: 10px 5px 5px grey;
-            border: 2px solid black;
+            font-size: 70px;
+            font-weight: 600;
+            color : #103e78;
         }
-        td{
-            padding:10px;
+        .container div{
+            display: flex;
+            flex-direction: column;
+            justify-content : space-evenly;
+            align-items: center;
+            margin: 15px;
+            padding: 5px;
         }
-        .large{
-            font-size: 4.5rem;
+        .container input{
+            margin: 10px;
         }
-        .input-size{
+        .container .int-ctrl{
             width : 80%;
+            background : #deeefd;
+        	border: none;
+        	border-radius: 1rem;
+        	padding: 5px 15px;
+        	font-weight: 600;
+        	color : #9b9898;
+        }
+        .container .in-ctrl:focus{
+        	outline: none;
+        }
+        .container .btn[type=submit]{
+            background-color: #63abff;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 1px 3px 3px 0px hsla(0, 0%, 0%, 0.35);
+            padding:5px 15px;
+        }
+        .container .btn[type=button]{
+            background-color: #6490e4;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 1px 3px 3px 0px hsla(0, 0%, 0%, 0.35);
+            padding:5px 15px;
         }
     </style>
 </head>
 <body>
-    <form>
-        
+    <form action="/account/login" method="post" onsubmit="return formCheck();">
         <div class="container">
-            <div class="box">
-                <table>
-                    <tr>
-                        <td >
-                            <span class="large">BOOK KEEPER</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" placeholder="ID" class="input-size">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="password" placeholder="Password" class="input-size">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="submit" value="Log In" class="btn btn-primary">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="button" value="Sign In" class="btn btn-primary" onclick="signIn()">
-                        </td>
-                    </tr>
-                    
-                </table>
+            <div class="logo">BOOK <br> KEEPER</div>
+            <div class="input">
+                <input type="text" placeholder="ID" class="int-ctrl" id="id" name="acc_id">
+                <input type="password" placeholder="Password" class="int-ctrl" id="pw" name="acc_pw">
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Log In" class="btn btn-primary">
+                <input type="button" value="Sign In" class="btn btn-primary" onclick="signIn();">
             </div>
         </div>
-        
     </form>
 </body>
 </html>
