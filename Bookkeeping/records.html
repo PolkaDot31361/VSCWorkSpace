@@ -8,12 +8,6 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../resources/css/bootstrap.css">
     <style type="text/css">
-    body{
-        margin: 50px auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     table .btn{
         font-size: 36px;
     }
@@ -24,6 +18,76 @@
     .right-align{
         text-align: right;
     }
+    .container{
+        border: 2px solid black;
+        border-radius: 1rem;
+        margin: 50px auto;
+        width: 960px;
+        min-width: 960px;
+        box-shadow: 10px 5px 5px grey;
+        padding: 25px;
+    }
+    .container a{
+        text-decoration: none;
+        font-size: 36px;
+        color: black;
+        font-weight: 600;;
+    }
+    .container .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 25px
+    }
+    .container .search{
+        margin: 25px 0;
+        transform: translateX(65%);
+    }
+    .records .income{
+        color : green;
+        font-weight: 600;
+    }
+    .records .expense{
+        color:red;
+        font-weight: 600;
+    }
+    .records .bx-minus:hover{
+        color: red;
+    }
+    .records .bx-list-plus:hover, .bxs-edit:hover{
+        color:grey;
+    }
+    .records .navi{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+    .records .navi i{
+        font-size: 32px;
+    }
+    .analysis{
+        vertical-align: middle;
+    }
+    .analysis input[type = "number"]{
+        height: 38px;
+        padding: 12px 6px;
+        display: inline-block;
+        font-weight: 400;
+        /* line-height: 1.5; */
+        vertical-align: middle;
+    }
+    .logout{
+        display: flex;
+        justify-content: right;
+    }
+    .logout .btn{
+        font-size: 36px;
+    }
+    .logout .btn:hover{
+            color:grey;
+        }
     </style>
     <script type="text/javascript">
         function check(){
@@ -32,68 +96,80 @@
     </script>
 </head>
 <body>
-    <div class="records">
-
-        <table class="table table-hover">
-            <tr>
-                <th>
-                    <i class='bx bx-list-plus btn' onclick="check();"></i>
-                </th>
-                <th>Num</th>
-                <th>Memo</th>
-                <th>Type</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>
-                    <i class='bx bx-minus btn' onclick="check();"></i>
-                </td>
-                <td>number integer</td>
-                <td class="right-align">Memo</td>
-                <td class="income">income</td>
-                <td class="right-align">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
-                <td>date</td>
-                <td>
-                    <i class='bx bxs-edit btn' onclick="check();"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i class='bx bx-minus btn' onclick="check();"></i>
-                </td>
-                <td>number integer</td>
-                <td class="right-align">Memo</td>
-                <td class="spent">spent</td>
-                <td class="right-align">abdfer</td>
-                <td>date</td>
-                <td>
-                    <i class='bx bxs-edit btn' onclick="check();"></i>
-                </td>
-            </tr>
-        </table>
+    <div class="container">
+        <a href="#">
+            BOOK KEEPER <i class='bx bx-home' ></i>
+        </a>
+        <div class="box">
+            <div class="records">
+                <table class="table table-hover">
+                    <tr>
+                        <th>
+                            <i class='bx bx-list-plus btn' onclick="check();"></i>
+                        </th>
+                        <th>Num</th>
+                        <th>Memo</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class='bx bx-minus btn' onclick="check();"></i>
+                        </td>
+                        <td>number integer</td>
+                        <td class="right-align">aligned or not</td>
+                        <td class="income">income</td>
+                        <td class="right-align">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                        <td>date</td>
+                        <td>
+                            <i class='bx bxs-edit btn' onclick="check();"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class='bx bx-minus btn' onclick="check();"></i>
+                        </td>
+                        <td>number integer</td>
+                        <td class="right-align">Memo</td>
+                        <td class="expense">spent</td>
+                        <td class="right-align">abdfer</td>
+                        <td>date</td>
+                        <td>
+                            <i class='bx bxs-edit btn' onclick="check();"></i>
+                        </td>
+                    </tr>
+                </table>
+                <div class="navi">
+                    <i class='bx bx-chevron-left btn' ></i>
+                    <span class="page">12</span>
+                    <i class='bx bx-chevron-right btn' ></i>
+                </div>
+            </div>
+            <div class="search">
+                <select id="searchType">
+                    <option value="">...</option>
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+                <input type="text" placeholder="Search..." id="searchText">
+                <input type="button" value="Search" id="search">
+            </div>
+            <div class="analysis">
+                
+                <input type="button" value="Total Income" id="income" class="btn btn-success">
+                <input type="button" value="Total Expense" id="spend" class="btn btn-danger">
+                <input type="number" placeholder="Total Income or Expense" id="total" readonly>
+                <br><br>
+                <input type="button" value="min" id="min" class="btn btn-outline-secondary">
+                <input type="button" value="Max" id="max" class="btn btn-outline-secondary"> 
+                <input type="number" id="result" placeholder="min or Max" readonly> 
+            </div>
+        </div>
+            <div class="logout">
+                <i class='bx bx-log-out btn'></i>
+            </div>
     </div>
-	<br><br>
-    <div class="search">
-        <select id="searchType">
-            <option value="">...</option>
-            <option value="수입">Income</option>
-            <option value="지출">Expense</option>
-        </select>
-        <input type="text" placeholder="Search..." id="searchText">
-        <input type="button" value="Search" id="search">
-    </div>
-        <br><br>
-    <div class="analysis">
-
-        <input type="button" value="Total Income" id="income" class="btn btn-success">
-        <input type="button" value="Total Expense" id="spend" class="btn btn-danger">
-        <input type="number" placeholder="Total Income or Expense" id="total" readonly>
-        <br><br>
-        <input type="button" value="Minimum Amount" id="min" class="btn btn-default">
-        <input type="button" value="Maximum Amount" id="max" class="btn btn-default">
-        <input type="number" id="result" placeholder="Minimun or Maximum Amount" readonly>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
