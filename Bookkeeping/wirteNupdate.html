@@ -7,88 +7,44 @@
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../resources/css/bootstrap.css">
+    <link rel="stylesheet" href="../resources/css/bkstyle.css">
     <style type="text/css">
-        .container{
-            border: 2px solid black;
-            border-radius: 1rem;
-            margin: 50px auto;
-            width: 450px;
-            min-width: auto;
-            box-shadow: 10px 5px 5px grey;
-            padding: 25px;
-        }
-        .container a{
-            text-decoration: none;
-            font-size: 36px;
-            color: black;
-            font-weight: 600;;
-        }
-        .container .box{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 45px 25px 0 25px;
-        }
-        .logout{
-            display: flex;
-            justify-content: right;
-        }
-        .logout .btn{
-            font-size: 36px;
-        }
-        .logout .btn:hover{
-            color:grey;
-        }
-       form .btn{
-            font-size: 30px;
-            padding:0;
-            margin:0;
-            color:#0d6efd;
-        }
-        form .btn:hover{
-            color:hsl(216, 98%, 72%);
-        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="#">
-            BOOK KEEPER <i class='bx bx-home' ></i>
-        </a>
-        <div class="box">
-            <form action="/book/updateRecord" method="post" onsubmit="return formCheck();">
-                <input type="hidden" name="acc_id" value="">
-                <input type="hidden" name="moneybook_no" value="">
-                <table class="table table-hover">
-                    <tr>
-                        <td>Memo</td>
-                        <td>
-                            <input type="text" name="moneybook_memo" id="memo" value="">
-                        </td>
-                    </tr>		
-                    <tr>
-                        <td>Type</td>
-                        <td>
-                            <select name="moneybook_type" id="type">
-                                <option value="Income">Income</option>
-                                <option value="Expense">Expense</option>
-                            </select>
-                        </td>
-                    </tr>		
-                    <tr>
-                        <td>Amount</td>
-                        <td>
-                            <input type="number" name="moneybook_amount" id="amount" value="">
-                        </td>
-                    </tr>		
-                </table>
-                <i class='bx bxs-edit btn' onclick="check();"></i>
-            </form>
-        </div>
-        <div class="logout">
-            <i class='bx bx-log-out btn'></i>
-        </div>
+		<div class="logo">
+	        <a href="/book/records">
+	            BOOK<br>
+	            KEEPER 
+	        </a>
+		</div>
+        <form action="/book/updateRecord" method="post" onsubmit="return formCheck();" id="updateForm">
+        <div class="inputs">
+            <input type="hidden" name="acc_id" value="${sessionScope.userID }">
+            <input type="hidden" name="moneybook_no" value="${record.moneybook_no}">
+            
+                Memo
+
+                    <input type="text" name="moneybook_memo" id="memo" value="${record.moneybook_memo }">
+
+                Type
+
+                    <select name="moneybook_type" id="type">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+
+                Amount
+
+                    <input type="number" name="moneybook_amount" id="amount" value="${record.moneybook_amount }">
+                </div>
+            <div class="buttons">
+                <i class='bx bxs-edit btn' onclick="submitForm();"></i>
+                <i class='bx bx-log-out btn'></i>
+            </div>
+        </form>
     </div>
 </body>
 </html>
